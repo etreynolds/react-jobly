@@ -14,39 +14,37 @@ function Routes() {
     return (
         <div>
             {/* <h1>This is the routes page</h1> */}
-            <BrowserRouter>
-                <Switch>
+            {/* <BrowserRouter> */}
+            <Switch>
 
-                    <Route exact path="/">
-                        <Homepage />
-                    </Route>
+                <Route exact path="/" component={Homepage} />
 
-                    <Route exact path="/companies">
-                        <CompanyList />
-                    </Route>
+                <Route exact path="/companies">
+                    <CompanyList />
+                </Route>
 
-                    <Route exact path="/companies/:handle">
-                        <CompanyDetail />
-                    </Route>
+                <Route exact path="/companies/:handle">
+                    <CompanyDetail />
+                </Route>
 
-                    <Route exact path="/jobs">
-                        <JobList />
-                    </Route>
+                <Route exact path="/jobs">
+                    <JobList />
+                </Route>
 
-                    <Route exact path="/login">
-                        <LoginForm />
-                    </Route>
+                <Route exact path="/login">
+                    <LoginForm />
+                </Route>
 
-                    <Route exact path="/signup">
-                        <SignupForm />
-                    </Route>
+                <Route exact path="/signup">
+                    <SignupForm />
+                </Route>
 
-                    <Route exact path="/profile">
-                        <ProfileForm />
-                    </Route>
+                <Route exact path="/profile">
+                    <ProfileForm />
+                </Route>
 
-                </Switch>
-            </BrowserRouter>
+            </Switch>
+            {/* </BrowserRouter> */}
         </div>
     )
 }
