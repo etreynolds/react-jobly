@@ -1,8 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState, usesEffect } from "react";
+import JoblyApi from "./api";
 
 function CompanyList() {
+    console.debug("CompanyList");
 
+    const [companies, setCompanies] = useState(null);
+
+    useEffect(function getCompaniesOnMount() {
+        console.debug("CompanyList useEffect getCompaniesOnMount");
+        search();
+    }, []);
 
     return (
         <div>
