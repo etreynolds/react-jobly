@@ -1,5 +1,8 @@
-import React, { useEffect, useState, usesEffect } from "react";
+import React, { useEffect, useState } from "react";
+import SearchForm from "./SearchForm";
 import JoblyApi from "./api";
+import CompanyCard from "./CompanyCard";
+import LoadingSpinner from "./LoadingSpinner";
 
 function CompanyList() {
     console.debug("CompanyList");
@@ -11,9 +14,35 @@ function CompanyList() {
         search();
     }, []);
 
+    async function search(name) {
+        let companies = await JoblyApi.getCompanies(name);
+        setCompanies(companies);
+    }
+
+    if (!companies) return <LoadingSpinner />;
+
     return (
-        <div>
+        <div className="col-md-8 offset-md-2">
             <h1>This is the page to show a list of all companies.</h1>
+
+            <SearchForm searchFor={search} />
+            {companies.length
+                ? (
+                    <div className="CompanyList-list">
+                        {companies.map(c => (
+                            <CompanyCard
+                                key={c.handle}
+                                handle={c.handle}
+                                name={c.name}
+                                description={c.description}
+                                logoUrl={c.logoUrl}
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <p className="lead">Sorry, no results were found!</p>
+                )}
+
         </div>
     );
 }
