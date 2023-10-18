@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import SearchForm from "./SearchForm";
-import JoblyApi from "./api";
+import SearchForm from "../common/SearchForm";
+import JoblyApi from "../api";
 import CompanyCard from "./CompanyCard";
-import LoadingSpinner from "./LoadingSpinner";
+import LoadingSpinner from "../common/LoadingSpinner";
 
 function CompanyList() {
     console.debug("CompanyList");

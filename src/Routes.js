@@ -3,9 +3,9 @@ import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
 import Homepage from "./Homepage";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
-import CompanyDetail from "./CompanyDetail";
-import CompanyList from "./CompanyList";
-import JobList from "./JobList";
+import CompanyDetail from "./companies/CompanyDetail";
+import CompanyList from "./companies/CompanyList";
+import JobList from "./jobs/JobList";
 import ProfileForm from "./ProfileForm";
 
 
