@@ -1,8 +1,8 @@
 import React from "react";
 import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
 import Homepage from "./Homepage";
-import LoginForm from "./LoginForm";
-import SignupForm from "./SignupForm";
+import LoginForm from "./auth/LoginForm";
+import SignupForm from "./auth/SignupForm";
 import CompanyDetail from "./companies/CompanyDetail";
 import CompanyList from "./companies/CompanyList";
 import JobList from "./jobs/JobList";
